@@ -26,6 +26,8 @@
 *.ckpt*
 *.jpg
 *.png
+*.json
+*.mp4
 # Logs and databases #
 ######################
 .ipynb_checkpoints
@@ -48,3 +50,6 @@ build
 build/*
 params
 */data/*
+*/logs/*
+logs/*
+logs
