@@ -28,9 +28,12 @@
 *.png
 *.json
 *.mp4
+*.pickle
+*.csv
 # Logs and databases #
 ######################
 .ipynb_checkpoints
+checkpoint
 *.log
 *.sql
 *.sqlite
@@ -53,3 +56,5 @@ params
 */logs/*
 logs/*
 logs
+*logs*
+*params*
