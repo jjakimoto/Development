@@ -1,0 +1,17 @@
+setup.py
+torchbot/__init__.py
+torchbot/optimizer.py
+torchbot/training.py
+torchbot/utils.py
+torchbot.egg-info/PKG-INFO
+torchbot.egg-info/SOURCES.txt
+torchbot.egg-info/dependency_links.txt
+torchbot.egg-info/top_level.txt
+torchbot/models/__init__.py
+torchbot/models/decoder.py
+torchbot/models/encoder.py
+torchbot/models/generator.py
+torchbot/models/layers.py
+torchbot/models/make.py
+torchbot/models/model.py
+torchbot/models/utils.py
