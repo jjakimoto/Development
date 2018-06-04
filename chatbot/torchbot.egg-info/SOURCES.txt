@@ -1,6 +1,7 @@
 setup.py
 torchbot/__init__.py
 torchbot/optimizer.py
+torchbot/preprocessing.py
 torchbot/training.py
 torchbot/utils.py
 torchbot.egg-info/PKG-INFO

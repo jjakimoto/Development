@@ -58,3 +58,5 @@ logs/*
 logs
 *logs*
 *params*
+datasets
+data
