@@ -54,14 +54,12 @@ class LabelSmoothing(nn.Module):
 
 
 class SimpleLossCompute(object):
-    def __init__(self, generator, criterion, opt=None):
-        self.generator = generator
+    def __init__(self, criterion, opt=None):
         self.criterion = criterion
         self.opt = opt
 
-    def __call__(self, x, y, norm):
+    def __call__(self, x, y, norm=1.):
         norm = float(norm)
-        x = self.generator(x)
         loss = self.criterion(x.contiguous().view(-1, x.size(-1)),
                               y.contiguous().view(-1))
         loss /= norm
@@ -85,8 +83,10 @@ def run_epoch(data_iter, model, loss_compute, log_freq=50):
         tokens += batch.ntokens.item()
         if i % log_freq == 0:
             elapsed = time.time() - start
-            # print("Epoch Step: %d Loss: %f Tokens per Sec: %f" %
-            print(i, loss, tokens / elapsed)
+            print("Epoch Step: %d Loss: %f Tokens per Sec: %f" %\
+                    (i, loss / batch.ntokens.item(), tokens / elapsed))
             start = time.time()
             tokens = 0
+        # Release memories
+        del out, loss, batch
     return total_loss / total_tokens
