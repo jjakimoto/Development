@@ -16,12 +16,12 @@ const char SELL = 'a';
 
 
 typedef struct MessageType {
-    int timestamp;
+    long long timestamp;
     int side;
     char action;
-    int id;
-    int price;
-    int quantity;
+    long id;
+    long price;
+    long quantity;
 } MessageType;
 
 
@@ -171,20 +171,20 @@ int main(int argc, char* argv[])
             }
             // Update Snapshot
             MessageType message;
-            int timestamp;
+            long long timestamp;
             istringstream(words[0]) >> timestamp;
             message.timestamp = timestamp;
             char side = words[1][0];
             message.side = side;
             char action = words[2][0];
             message.action = action;
-            int id;
+            long id;
             istringstream(words[3]) >> id;
             message.id = id;
-            int price;
+            long price;
             istringstream(words[4]) >> price;
             message.price = price;
-            int quantity;
+            long quantity;
             istringstream(words[5]) >>  quantity;
             message.quantity = quantity;
             depth.update(message);
