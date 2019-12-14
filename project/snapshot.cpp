@@ -16,7 +16,7 @@ const char SELL = 'a';
 
 
 typedef struct MessageType {
-    long long timestamp;
+    long timestamp;
     int side;
     char action;
     long id;
@@ -171,7 +171,7 @@ int main(int argc, char* argv[])
             }
             // Update Snapshot
             MessageType message;
-            long long timestamp;
+            long timestamp;
             istringstream(words[0]) >> timestamp;
             message.timestamp = timestamp;
             char side = words[1][0];
